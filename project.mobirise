@@ -36,7 +36,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.10.3",
     "siteFonts": [],
-    "uniqCompNum": 49,
+    "uniqCompNum": 52,
     "versionPublish": "4.10.3",
     "screenshot": "screenshot.png",
     "witsec-white-label": "on",
@@ -50,7 +50,8 @@
     "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
     "robotsSwitcher": "on",
     "sitemapSwitcherAuto": "on",
-    "sitemapSwitcher": "on"
+    "sitemapSwitcher": "on",
+    "modified": "2019-07-31T14:40:30.196Z"
   },
   "pages": {
     "index.html": {
@@ -63,6 +64,489 @@
         "html_before": ""
       },
       "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "min-height": "80px",
+            ".brand-name": {
+              "color": "#494949",
+              "margin": "0"
+            },
+            ".nav-item:focus, .nav-link:focus": {
+              "outline": "none"
+            },
+            ".navbar-nav": {
+              "list-style-type": "none",
+              "display": "flex",
+              "-webkit-flex-direction": "row",
+              "flex-direction": "row",
+              "padding-left": "0",
+              ".nav-link": {
+                "margin": ".667em 1em",
+                "font-weight": "normal"
+              }
+            },
+            "@media (min-width: 992px)": {
+              ".dropdown-menu .dropdown-toggle:after": {
+                "content": "''",
+                "border-bottom": "0.35em solid transparent",
+                "border-left": "0.35em solid",
+                "border-right": "0",
+                "border-top": "0.35em solid transparent",
+                "margin-left": "0.3rem",
+                "margin-top": "-0.3077em",
+                "position": "absolute",
+                "right": "1.1538em",
+                "top": "50%"
+              }
+            },
+            "@media (max-width: 991px)": {
+              "ul.navbar-nav": {
+                "-webkit-flex-direction": "column !important",
+                "flex-direction": "column !important",
+                "li": {
+                  "margin": "auto"
+                }
+              },
+              ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]:after": {
+                "content": "''",
+                "margin-left": ".25rem",
+                "border-top": "0.35em solid",
+                "border-right": "0.35em solid transparent",
+                "border-left": "0.35em solid transparent",
+                "border-bottom": "0",
+                "top": "55%"
+              },
+              ".nav-dropdown .dropdown-menu .dropdown-item": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center",
+                "display": "flex !important",
+                "-webkit-align-items": "center",
+                "align-items": "center"
+              }
+            },
+            ".nav-dropdown .dropdown-menu": {
+              "border-radius": "0",
+              "border": "0",
+              "left": "0",
+              "margin": "0",
+              "min-width": "10rem",
+              "padding-bottom": "1.25rem",
+              "padding-top": "1.25rem",
+              "position": "absolute",
+              ".dropdown-item": {
+                "font-weight": "400",
+                "line-height": "2",
+                "display": "flex",
+                "-webkit-align-items": "center",
+                "align-items": "center",
+                "width": "100%",
+                "padding": ".25rem 1.5rem",
+                "clear": "both",
+                "text-align": "inherit",
+                "white-space": "nowrap",
+                "background": "0 0",
+                "border": "0"
+              },
+              ".dropdown": {
+                "position": "relative"
+              }
+            },
+            ".nav-item.dropdown": {
+              "position": "relative",
+              ".dropdown-menu": {
+                "z-index": "-1",
+                "opacity": "0",
+                "pointer-events": "none"
+              },
+              "&:hover": {
+                "& > .dropdown-menu": {
+                  "z-index": "1",
+                  "opacity": "1",
+                  "pointer-events": "all"
+                }
+              }
+            },
+            ".dropdown-menu .dropdown:hover": {
+              "& > .dropdown-menu": {
+                "z-index": "1",
+                "opacity": "1",
+                "pointer-events": "all"
+              }
+            },
+            ".link.dropdown-toggle:after": {
+              "content": "''",
+              "margin-left": ".25rem",
+              "border-top": "0.35em solid",
+              "border-right": "0.35em solid transparent",
+              "border-left": "0.35em solid transparent",
+              "border-bottom": "0"
+            },
+            ".nav-dropdown .dropdown-submenu": {
+              "top": "0"
+            },
+            ".navbar": {
+              "z-index": "100",
+              "display": "flex",
+              "-webkit-flex-direction": "row",
+              "flex-direction": "row",
+              "width": "100%",
+              "min-height": "80px",
+              "transition": "all .3s",
+              "background": "@menuBgColor",
+              ".navbar-logo": {
+                "margin-right": ".8rem",
+                "img": {
+                  "height": "auto"
+                }
+              },
+              "&.navbar-short": {
+                "background": "@menuBgColor !important",
+                ".brand": {
+                  "padding": "0"
+                }
+              },
+              "&.opened": {
+                "transition": "all .3s",
+                "background": "@menuBgColor !important"
+              },
+              ".dropdown-item": {
+                "padding": ".25rem 1.5rem"
+              },
+              ".navbar-collapse": {
+                "display": "flex",
+                "-webkit-justify-content": "flex-end",
+                "justify-content": "flex-end",
+                "z-index": "1",
+                "-webkit-flex-basis": "100%",
+                "flex-basis": "100%",
+                "-webkit-align-items": "center",
+                "align-items": "center",
+                "& when not (@showItems)": {
+                  "display": "none !important"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".navbar-collapse": {
+                  "display": "none",
+                  "position": "absolute",
+                  "top": "0",
+                  "right": "0",
+                  "min-height": "100vh",
+                  "background": "@menuBgColor",
+                  "padding": "1rem 2rem 1rem 2rem",
+                  "& when (@sidebarSide = 'left')": {
+                    "right": "auto",
+                    "left": "0"
+                  }
+                },
+                "&.opened": {
+                  ".navbar-collapse": {
+                    "&.show, &.collapsing": {
+                      "display": "block"
+                    }
+                  },
+                  ".dropdown-menu": {
+                    "top": "0"
+                  }
+                },
+                ".dropdown-menu": {
+                  "position": "relative",
+                  "background": "transparent !important",
+                  ".dropdown-submenu": {
+                    "left": "0 !important"
+                  },
+                  ".dropdown-item:after": {
+                    "right": "auto"
+                  }
+                },
+                ".dropdown-menu .dropdown-item": {
+                  "padding": ".25rem 1.5rem",
+                  "text-align": "center",
+                  "margin": "0"
+                },
+                ".brand": {
+                  "-webkit-flex-shrink": "initial",
+                  "flex-shrink": "initial",
+                  "word-break": "break-word"
+                }
+              }
+            },
+            ".brand": {
+              "display": "flex",
+              "-webkit-flex-shrink": "0",
+              "flex-shrink": "0",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "margin-right": "0",
+              "padding": "0",
+              "transition": "all .3s",
+              "word-break": "break-word",
+              "z-index": "1",
+              ".navbar-caption": {
+                "line-height": "inherit !important",
+                "font-weight": "normal"
+              },
+              ".navbar-logo a": {
+                "outline": "none"
+              },
+              ".navbar-caption-wrap": {
+                "display": "flex"
+              }
+            },
+            ".dropdown-item.active,.dropdown-item:active": {
+              "background-color": "transparent"
+            },
+            ".navbar-expand-lg .navbar-nav .nav-link": {
+              "padding": "0"
+            },
+            ".navbar.navbar-expand-lg .dropdown": {
+              ".dropdown-menu": {
+                "background": "@menuBgColor",
+                ".dropdown-submenu": {
+                  "margin": "0",
+                  "left": "100%"
+                }
+              }
+            },
+            ".navbar .dropdown.open > .dropdown-menu": {
+              "display": "block"
+            },
+            "ul.navbar-nav": {
+              "-webkit-flex-wrap": "wrap",
+              "flex-wrap": "wrap"
+            },
+            ".navbar-buttons": {
+              "text-align": "center"
+            },
+            "button.navbar-toggler": {
+              "display": "none",
+              "outline": "none",
+              "width": "31px",
+              "height": "20px",
+              "cursor": "pointer",
+              "transition": "all .2s",
+              "position": "relative",
+              "-webkit-align-self": "center",
+              "align-self": "center",
+              ".hamburger span": {
+                "position": "absolute",
+                "right": "0",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "top": "0",
+                  "transition": "all .2s"
+                },
+                "&:nth-child(2)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(3)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(4)": {
+                  "top": "16px",
+                  "transition": "all .2s"
+                }
+              }
+            },
+            "nav.opened .navbar-toggler:not(.hide) .hamburger span": {
+              "&:nth-child(1)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              },
+              "&:nth-child(2)": {
+                "-webkit-transform": "rotate(45deg)",
+                "transform": "rotate(45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(3)": {
+                "-webkit-transform": "rotate(-45deg)",
+                "transform": "rotate(-45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(4)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              }
+            },
+            ".navbar-dropdown": {
+              "padding": ".5rem 1rem",
+              "& when (@sticky)": {
+                "position": "fixed"
+              }
+            },
+            "a.nav-link": {
+              "display": "flex",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "-webkit-justify-content": "center",
+              "justify-content": "center"
+            },
+            ".nav-link,.dropdown-item": {
+              ".mbr-iconfont": {
+                "margin-right": ".2rem"
+              }
+            },
+            ".ampstart-btn": {
+              "display": "flex",
+              "@media (min-width: 992px)": {
+                "display": "none"
+              },
+              "-webkit-align-self": "center",
+              "align-self": "center",
+              "&.hamburger": {
+                "position": "relative",
+                "right": "20px",
+                "margin-left": "auto",
+                "width": "30px",
+                "height": "20px",
+                "background": "none",
+                "border": "none",
+                "cursor": "pointer",
+                "z-index": "1000",
+                "&:focus": {
+                  "outline": "none"
+                },
+                "span": {
+                  "position": "absolute",
+                  "right": "0",
+                  "width": "30px",
+                  "height": "2px",
+                  "border-right": "5px",
+                  "background-color": "@hamburgerColor",
+                  "&:nth-child(1)": {
+                    "top": "0",
+                    "transition": "all .2s"
+                  },
+                  "&:nth-child(2)": {
+                    "top": "8px",
+                    "transition": "all .15s"
+                  },
+                  "&:nth-child(3)": {
+                    "top": "8px",
+                    "transition": "all .15s"
+                  },
+                  "&:nth-child(4)": {
+                    "top": "16px",
+                    "transition": "all .2s"
+                  }
+                }
+              }
+            },
+            "amp-sidebar": {
+              "min-width": "260px!important",
+              "z-index": "1050!important",
+              "background-color": "@menuBgColor"
+            },
+            "amp-sidebar.open:after": {
+              "content": "''",
+              "position": "absolute",
+              "top": "0",
+              "left": "0",
+              "bottom": "0",
+              "right": "0",
+              "background-color": "red"
+            },
+            ".open": {
+              "transform": "translateX(0%) !important",
+              "display": "block!important",
+              "-webkit-transform": "translateX(0%) !important"
+            },
+            ".builder-sidebar": {
+              "background-color": "@menuBgColor",
+              "position": "relative",
+              "min-height": "100vh",
+              "z-index": "1030",
+              "padding": "1rem 2rem",
+              "max-width": "20rem",
+              ".dropdown": {
+                "position": "relative",
+                "&:hover": {
+                  "& > .dropdown-menu": {
+                    "position": "relative",
+                    "text-align": "center"
+                  }
+                }
+              }
+            },
+            ".sidebar": {
+              "padding": "1rem 0",
+              "margin": "0"
+            },
+            ".sidebar > li": {
+              "list-style": "none",
+              "display": "flex",
+              "-webkit-flex-direction": "column",
+              "flex-direction": "column"
+            },
+            ".sidebar a": {
+              "display": "block",
+              "text-decoration": "none",
+              "margin-bottom": "10px"
+            },
+            ".close-sidebar": {
+              "width": "30px",
+              "height": "30px",
+              "position": "relative",
+              "cursor": "pointer",
+              "background-color": "transparent",
+              "border": "none",
+              "&:focus": {
+                "outline": "2px auto @primaryColor"
+              },
+              "span": {
+                "position": "absolute",
+                "left": "0",
+                "top": "14px",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "-webkit-transform": "rotate(45deg)",
+                  "transform": "rotate(45deg)"
+                },
+                "&:nth-child(2)": {
+                  "-webkit-transform": "rotate(-45deg)",
+                  "transform": "rotate(-45deg)"
+                }
+              }
+            },
+            "amp-img": {
+              "margin-right": "1rem",
+              "display": "flex",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "height": "~\"@{logoHeight}px\"",
+              "width": "~\"@{logoWidth}px\"",
+              "@media (max-width: 767px)": {
+                "max-height": "35px",
+                "max-width": "35px"
+              }
+            }
+          },
+          "_name": "menu2",
+          "_customHTML": "<section class=\"menu horizontal-menu\" group=\"Menu\" plugins=\"DropDown, amp-main,amp-sidebar\" global once=\"menu\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Show Logo\" name=\"showLogo\" checked>\n        <input type=\"range\" title=\"Logo Height\" inline name=\"logoHeight\" min=\"35\" max=\"120\" value=\"60\" step=\"1\" condition=\"showLogo\">\n        <input type=\"range\" title=\"Logo Width\" inline name=\"logoWidth\" min=\"35\" max=\"120\" value=\"60\" step=\"1\" condition=\"showLogo\">\n        <input type=\"checkbox\" title=\"Show Brand Name\" name=\"showBrand\">\n        <input type=\"checkbox\" title=\"Show Menu Items\" name=\"showItems\" checked>\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Sticky\" name=\"sticky\">\n        <select title=\"Sidebar Side\" name=\"sidebarSide\">\n            <option value=\"left\">Left</option>\n            <option value=\"right\" selected>Right</option>\n        </select>\n        <input type=\"color\" title=\"Hamburger Color\" name=\"hamburgerColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Background Color\" name=\"menuBgColor\" value=\"#ffda00\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n\n    <nav class=\"navbar navbar-dropdown navbar-expand-lg\" mbr-class=\"{'navbar-fixed-top':sticky}\">\n      <div class=\"brand\" mbr-if=\"showLogo || showBrand\">\n          <span mbr-if=\"showLogo\" class=\"brand-logo\">\n              <amp-img src=\"@PROJECT_PATH@/assets/images/cone-amarelo-90x90.png\" layout=\"responsive\" width=\"60\" height=\"60\" alt=\"Mobirise\" class=\"mobirise-loader\">\n                  <div placeholder class=\"placeholder\"></div>\n                  <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/cone-amarelo-90x90.png\" alt=\"Mobirise\" title>\n              </amp-img>\n          </span>\n          <p mbr-text mbr-theme-style=\"display-5\" mbr-if=\"showBrand\" class=\"brand-name mbr-fonts-style mbr-bold\" data-app-selector=\".brand-name\">Prof. Felipe Pereira</p>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <button class=\"navbar-toggler mb-2\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems||showButtons\">\n                <div class=\"hamburger\">\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                </div>\n            </button>\n            <ul mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-7\" mbr-if=\"showItems\" mbr-class=\"{'nav-right': !showButtons,'navbar-nav-top-padding': isPublish && !showBrand && !showLogo}\"><li class=\"nav-item dropdown\">\n                    <a class=\"nav-link link dropdown-toggle text-warning\" href=\"https://mobirise.co\" data-app-selector=\".nav-link,.dropdown-item\" data-toggle=\"dropdown-submenu\" aria-expanded=\"false\" data-app-placeholder=\"Type Text\"><span class=\"mbri-responsive mbr-iconfont mbr-iconfont-btn\"></span>Plataforma Prof. Felipe Pereira</a>\n                    <div class=\"dropdown-menu\">\n                        <a class=\"dropdown-item text-warning\" href=\"https://profelipereira.eadbox.com/categorias/semana-redacao-enem\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" target=\"_blank\">Semana Redação ENEM</a>\n                        <a class=\"dropdown-item text-warning\" href=\"https://profelipereira.eadbox.com/courses/curso-redacao-enem\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" target=\"_blank\">Curso Redação ENEM</a>\n                    </div>\n                </li></ul>\n            \n            <div mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-7\" class=\"navbar-buttons mbr-section-btn\"><a class=\"btn btn-sm btn-warning\" href=\"mailto:contato@profelipereira.com.br\" data-app-placeholder=\"Type Text\">\n                  Contato</a></div>\n      </div>\n      <button class=\"navbar-toggler hide\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems||showButtons\">\n          <div class=\"hamburger\">\n              <span></span>\n              <span></span>\n              <span></span>\n              <span></span>\n          </div>\n      </button>\n      <button on=\"tap:sidebar.toggle\" class=\"ampstart-btn hamburger\" mbr-class=\"{'sticky-but':sticky}\" mbr-if=\"showItems||showButtons\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n    </button>\n    </nav>\n\n  <!-- AMP plug -->\n    <amp-sidebar id=\"sidebar\" layout=\"nodisplay\" side=\"{{sidebarSide}}\">\n        <div class=\"builder-sidebar\" id=\"builder-sidebar\">\n            <button on=\"tap:sidebar.close\" class=\"close-sidebar\">\n                <span></span>\n                <span></span>\n            </button>\n        </div>\n    </amp-sidebar>\n\n</section>",
+          "_anchor": "menu2-1f",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise-amp",
+          "_cid": "rxX8t2ZTPU",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "menu",
+          "_params": {}
+        },
         {
           "alias": false,
           "_styles": {
@@ -907,9 +1391,11 @@
             }
           },
           "_name": "content2",
-          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Termos de Uso e Serviço</h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article><b><br></b><br><b>IMPORTANTE:</b> ESTES TERMOS DE SERVIÇO REGULAM O USO DESTE SITE DISPONIBILIZADO PELO PROF. FELIPE PEREIRA E PELA EMPRESA LIQUIDBOOK TECNOLOGIAS PARA PUBLICAÇÕES LTDA. AO ACESSAR ESTE SITE, VOCÊ ATESTA SEU CONHECIMENTO EM CONCORDÂNCIA COM ESTES TERMOS DE USO. ESTES TERMOS DE USO PODEM SER ALTERADOS A QUALQUER TEMPO E SEM AVISO. A UTILIZAÇÃO DESTE SITE APÓS TAIS ALTERAÇÕES ENTRAREM EM VIGOR CONSTITUI SEU CONHECIMENTO E ACEITAÇÃO DAS MUDANÇAS. POR FAVOR, CONSULTE OS TERMOS DE USO ANTES DE CADA USO PARA AVERIGUAR MODIFICAÇÕES.\n<br>\n<br><b>Acesso ao site\n<br></b>Para acessar a este site ou alguns dos recursos que ele oferece, pode ser requerido que você forneça alguns detalhes para inscrição ou outras informações. É uma condição de uso deste site que toda a informação que você forneça seja correta, atualizada e completa. Se acreditarmos que a informação fornecida não é correta, atualizada ou completa, temos o direito de recusar o seu acesso a este site ou qualquer um de seus serviços e também de cancelar ou suspender seu acesso a qualquer momento sem notificação prévia.\n<br>\n<br><b>Restrições de uso\n<br></b>Você pode utilizar este site para propósitos expressamente permitidos por este site. Você não pode utilizá-lo em qualquer outro objetivo, incluindo propósitos comerciais, sem o nosso consentimento prévio expresso e escrito. Por exemplo, você não pode (e tampouco pode autorizar a terceiros) a (i) associar as nossas marcas a nenhuma outra, ou (ii) fazer um frame deste site em outro ou (iii) fazer um hyperlink para este site sem a autorização expressa prévia e escrita de um de nossos representantes. Para efeitos desses Termos de Uso, “associar as nossas marcas” significa expor nome, logo, marca comercial ou outros meios de atribuição ou identificação em fonte de maneira que dê ao usuário a impressão de que tal fonte tem o direito de expor, publicar ou distribuir este site ou o conteúdo disponibilizado por ele. Você concorda em cooperar conosco para cessar qualquer associação, frame ou hyperlink não autorizados.\n<br>\n<br><b>Propriedade da Informação\n<br></b>O material e conteúdo (referido nesse documento como “conteúdo”) acessíveis neste site e qualquer outro website de propriedade, licenciado ou controlado por nós pertence ao Prof. Felipe Pereira e a Liquidbook ou da fonte que forneceu o conteúdo ao Prof. Felipe Pereira ou a Liquidbook, bem como o Prof. Felipe Pereira e a Liquidbook e/ou nossa fonte em questão detém todo o direito, título e proveito no Conteúdo. Da mesma forma, o conteúdo não pode ser copiado, distribuído, republicado, carregado, postado ou transmitido por qualquer meio sem o nosso consentimento prévio escrito, ou ao menos que esteja autorizado de forma escrita no nosso site, exceto quando você imprime uma cópia para seu uso pessoal somente. Ao fazer isso, você não pode remover, alterar ou causar remoção ou alteração em qualquer copyright, marca comercial, nome comercial, marca de serviço ou qualquer outro aviso de propriedade no Conteúdo. Modificação ou uso do Conteúdo em qualquer outra forma que não as expressamente descritas nestes Termos de Uso viola os nossos direitos de propriedade intelectual. Nem autoria nem a propriedade intelectual são transferidas para você ao acessar este site.\n<br>\n<br><b>Hyperlinks\n<br></b>Este site pode conter links para outros websites que não são mantidos ou mesmo relacionados à nós. Hyperlinks para tais sites são providos como um serviço para usuários e não são afiliados a este site ou à nós. O Prof. Felipe Pereira e a Liquidbook não revisamos todos ou mesmo nenhum desses sites e somos responsável pelo conteúdo deles. O usuário assume o risco ao acessar esses hyperlinks e tanto o Prof. Felipe Pereira, bem como a Liquidbook, não fazem nenhuma representação ou damos garantias sobre a plenitude ou precisão dos hyperlinks e os sites ao quais eles direcionam. Finalmente, a conclusão de qualquer hyperlink para um site de terceiro não necessariamente implica nosso endosso a este site.\n<br>\n<br><b>Envios\n<br></b>Por este termo você garante ao Prof, Felipe Pereira e a Liquidbook, o direito e licença royalty-free, perpétuo, irrevogável, global não exclusivo de usar, reproduzir, modificar, adaptar, publicar, traduzir, criar trabalhos derivados, distribuir, representar e expor todo o conteúdo, observações, sugestões, ideias, desenhos ou outras informações comunicadas à nós por este site (juntos, denominados agora como “Envios”), e incorporar qualquer Envio em outros trabalhos em qualquer formato, mídia ou tecnologia conhecida hoje ou ainda a ser desenvolvida. Não somos obrigados a tratar nenhum Envio como confidencial e podemos usar qualquer Envio em nosso negócio (incluindo e não se limitando a produtos ou propaganda) sem ser imputada nenhuma responsabilidade por royalties ou qualquer outra consideração de qualquer tipo e como resultado não fica responsável por qualquer similaridade que possa aparecer em nossas operações futuras. Trataremos qualquer informação pessoal que você submeter por esse site de acordo com as Políticas de Privacidade do site.\n<br>\n<br><b>Aviso Legal\n<br></b>Você entende que o Prof. Felipe Pereira e a Liquidbook não podem e não garantem que arquivos disponíveis para download da Internet estejam livres de vírus, worms, cavalos de Tróia ou outro código que possa manifestar propriedades contaminadoras ou destrutivas. Você é responsável por implementar procedimentos e checkpoints suficientes para satisfazer seus requisitos de segurança e por manter meios externos a este site para reconstrução de qualquer dado perdido. Não assumimos nenhuma responsabilidade ou risco pelo uso da Internet. O Conteúdo não é necessariamente completo e atualizado e não deve ser usado para substituir quaisquer relatórios, declarações ou avisos dados por nós. Investidores, colaboradores e outros devem usar o Conteúdo da mesma maneira que qualquer outro ambiente educacional e não deve confiar somente no Conteúdo em detrimento de seu próprio julgamento profissional. A informação obtida ao usar este site não é completa e não cobre todas as questões, tópicos ou fatos que possam ser relevantes para seus objetivos.\n<br>\n<br>O USO DESTE SITE É DE SUA TOTAL RESPONSABILIDADE. O CONTEÚDO É OFERECIDO COMO ESTÁ E SEM GARANTIAS DE QUALQUER TIPO, EXPRESSAS OU IMPLÍCITAS. NÃO GARANTiMOS QUE AS FUNÇÕES OU CONTEÚDO PRESENTE NESTE SITE SERÁ CONTÍNUO, LIVRE DE ERROS, QUE FALHAS SERÃO CORRIGIDAS OU QUE ESTE SITE E O SERVIDOR QUE O TORNA DISPONÍVEL ESTÃO LIVRES DE VÍRUS OU OUTROS COMPONENTES DESTRUTIVOS. NÃO GARANTIMOS OU FAZEMOS QUALQUER REPRESENTAÇÃO RELACIONADA AO USO OU RESULTADOS DO USO DO CONTEÚDO EM TERMOS DE PRECISÃO, CONFIABILIDADE OU OUTROS. O CONTEÚDO PODE INCLUIR IMPRECISÕES TÉCNICAS OU ERROS TIPOGRÁFICOS E PODEMOS FAZER MUDANÇAS OU MELHORIAS A QUALQUER MOMENTO. VOCÊ, E NÃO NÓS, ASSUME O CUSTO DE QUALQUER SERVIÇO, REPARO OU CORREÇÃO NECESSÁRIOS NO CASO DE QUALQUER PERDA OU DANO CONSEQUENTE DO USO DESTE SITE OU SEU CONTEÚDO. NÃO OFERECEMOS GARANTIA QUE O USO DESTE CONTEÚDO NÃO INFRINGIRÁ O DIREITO DE OUTRO E NÃO ASSUMIMOS QUALQUER RESPONSABILIDADE POR ERROS OU OMISSÕES EM TAL CONTEÚDO.\n<br>\n<br>Toda informação neste site seja de natureza histórica ou prospectiva é válida somente para a data que foi publicada no site e não nos comprometemos com nenhuma obrigação de atualizar tal informação depois que é publicada ou remover tal informação deste site caso ela não seja (mais) precisa ou completa.\n<br>\n<br><b>Limitação de responsabilidade\n<br></b>O PROF. FELIPE PEREIRA, A LIQUIDBOOK, SUAS FILIAIS, AFILIADOS, LICENCIANTES, PROVEDORES DE SERVIÇO, PROVEDORES DE CONTEÚDO, EMPREGADOS, AGENTES, ADMINISTRADORES E DIRETORES NÃO SERÃO RESPONSÁVEIS POR QUALQUER DANO EVENTUAL, DIRETO, INDIRETO, PUNITIVO, REAL, CONSEQUENTE, ESPECIAL, EXEMPLAR OU DE QUALQUER OUTRO TIPO, INCLUINDO PERDA DE RECEITA OU RENDA, DOR E SOFRIMENTO, ESTRESSE EMOCIONAL OU SIMILARES MESMO QUE TENHAMOS ACONSELHADO SOBRE A POSSIBILIDADE DE TAIS DANOS. DE NENHUMA FORMA A RESPONSABILIDADE COLETIVA DO PROF. FELIPE PEREIRA, DA LIQUIDBOOK E SUAS FILIAIS, AFILIADOS, LICENCIANTES, PROVEDORES DE SERVIÇO, PROVEDORES DE CONTEÚDO, EMPREGADOS, AGENTES, ADMINISTRADORES E DIRETORES EM RELAÇÃO A TERCEIROS (INDEPENDENTE DO TIPO DE AÇÃO, SEJA POR CONTRATO OU QUALQUER OUTRO) EXCEDERÁ A QUANTIA DE R$100 OU O VALOR PAGO À EMPRESA POR TAL CONTEÚDO, PRODUTO OU SERVIÇO DO QUAL A QUESTÃO TENHA SIDO LEVANTADA.\n<br>\n<br><b>Indenização\n<br></b>Você vai indenizar e isentar o Prof. Felipe Pereira, a Liquidbook, suas filiais, afiliados, licenciantes, provedores de serviço, provedores de conteúdo, empregados, agentes, administradores e diretores (referidas agora como Partes Isentas) de qualquer violação destes Termos de Uso por você, incluindo o uso do Conteúdo diferente do expresso aqui. Você concorda que as Partes Isentas não têm responsabilidade ou conexão com qualquer violação ou uso não autorizado e você concorda em remediar toda e qualquer perda, dano, julgamento, prêmios, custo, despesas e honorários advocatícios das Partes Isentas ligadas a violação. Você também indenizará e isentará as Partes Isentas de qualquer reivindicação de terceiros resultante do uso da informação contida neste site.\n<br>\n<br><b>Marcas Registradas\n<br></b>Marcas e logos presentes neste site são propriedade do Prof. Felipe Pereira e da Liquidbook ou da parte que as disponibilizaram para o Profe. Felipe Pereira e a Liquidbook. O Prof. Felipe Pereira, a Liquidbook e as partes que disponibilizaram marca e logo detém todos os direitos sobre as mesmas.\n<br>\n<br><b>Informação provida pelo usuário\n<br></b>Você não pode publicar enviar, apresentar ou fazer conexão a esse site qualquer material que:\n<br>·        você não tenha o direito de postar, incluindo material de propriedade de terceiros;\n<br>·        defenda atividade ilegal ou discutir a intenção de fazer algo ilegal;\n<br>·        seja vulgar, obsceno, pornográfico ou indecente;\n<br>·        não diga respeito diretamente a este site;\n<br>·        possa ameaçar ou insultar outros, difamar, caluniar, invadir privacidade, perseguir, ser obsceno, pornográfico, racista, assediar ou ofender;\n<br>·        busca explorar ou prejudicar crianças expondo-as a conteúdo inapropriado, perguntar sobre informações pessoais ou qualquer outro do tipo;\n<br>·        infrinja qualquer propriedade intelectual ou outro direito de pessoa ou entidade, incluindo violações de direitos autorais,marca registrada ou direitos de publicidade;\n<br>·        violam qualquer lei ou podem ser considerados para violar a lei;\n<br>·        personifique ou deturpe sua conexão com qualquer entidade ou pessoa; ou ainda manipula títulos ou identificadores para encobrir a origem do conteúdo;\n<br>·        promova qualquer empreendimento comercial (ex: oferecer produtos ou serviços em promoção) ou que engaje de qualquer forma em uma atividade comercial (ex: realizar sorteios ou concursos, expor banners patrocinadores e/ou solicitar bens e serviços) exceto que especificamente autorizado neste site;\n<br>·        solicitar fundos, divulgações ou patrocinadores;\n<br>·        inclua programas com vírus, worms e/ou Cavalos de Tróia ou qualquer outro código, arquivo ou programa de computador destinado a interromper, destruir ou limitar a funcionalidade de qualquer software ou hardware de computador ou telecomunicações;\n<br>·        interrompa o fluxo normal da conversa, faça com que a tela “role” mais rápido que os os outros usuários conseguem acompanhar ou mesmo agir de modo a afetar a habilidade de outras pessoas de se engajar em atividades em tempo real neste site;\n<br>·        inclua arquivos em formato MP3;\n<br>·        desobedeça qualquer política ou regra estabelecida de tempos em tempos para o uso desse site ou qualquer rede conectada a ele; ou,\n<br>·        contenha hiperlinks para sites que contenham conteúdo que se enquadrem nas descrições acima.\n<br>\n<br>Mesmo sem a obrigação de fazê-lo, tanto o Prof. Felipe Pereira como a Liquidbook reservamos o direito de monitorar o uso deste site para determinar o cumprimento destes Termos de Uso, assim como o de remover ou vetar qualquer informação por qualquer razão. De qualquer forma você é completamente responsável pelo conteúdo de seus envios. Você sabe e concorda que nem o Prof. Felipe Pereira, nem a Liquidbook ou qualquer terceiro provendo conteúdo para o Prof. Felipe Pereira ou a Liquidbook assumirá qualquer responsabilidade por nenhuma ação ou inação do Prof. Felipe Pereira ou da Liquidbook ou ainda referido terceiro a respeito de qualquer envio.\n<br>\n<br><b>Segurança\n<br></b>Toda senha usada para este site é somente para uso individual. Você é responsável pela segurança de sua senha (se for o caso). O Prof. Felipe Pereira e a Liquidbook têm o direito de monitorar a segurança de sua senha e ao seu critério pode pedir que você a mude. Se você usar qualquer senha que o Prof. Felipe Pereira ou a Liquidbook considerem insegura, o Prof. Felipe Pereira ou a Liquidbook &nbsp;têm o direito de requisitar que a senha seja modificada e/ou cancelar a sua conta.\n<br>É proibido usar qualquer serviço ou ferramenta conectada a este site para comprometer a segurança ou mexer com os recursos do sistema e/ou contas. O uso ou distribuição de ferramentas destinadas para comprometer a segurança (ex: programas para descobrir senha, ferramentas de crack ou de sondagem da rede) são estritamente proibidos. Se você estiver envolvido em qualquer violação da segurança do sistema, o Prof. Felipe Pereira ou a Liquidbook se reservam o direito de fornecer suas informações para os administradores de sistema de outros sites para ajudá-los a resolver incidentes de segurança. O Prof. Felipe Pereira e a Liquidbook se reservam o direito de investigar potenciais violações a estes Termos de Usos.\n<br>O Prof. Felipe Pereira e a Liquidbook se reservam o direito de cooperar totalmente com as autoridades competentes ou pedidos da justiça para que o Prof. Felipe Pereira e a Liquidbook revelem a identidade de qualquer pessoa que publique e-mail, mensagem ou disponibilize qualquer material que possa violar estes Termos de Uso e Serviço.\n<br>\n<br>AO ACEITAR ESTE ACORDO VOCÊ ISENTA O PROF. FELIPE PEREIRA E A LIQUIDBOOK DE QUALQUER CONSEQUÊNCIA RESULTANTE DE QUALQUER AÇÃO DA LIQUIDBOOK OU DO PROF. FELIPE PEREIRA DURANTE OU COMO RESULTADO DE SUAS INVESTIGAÇÕES E/OU DE AÇÕES TOMADAS RESULTANTES DE INVESTIGAÇÕES TANTO DO PROF. FELIPE PEREIRA OU DA LIQUIDBOOK QUANTO DAS AUTORIDADES DE JUSTIÇA COMPETENTES.\n<br>\n<br>PROF. FELIPE PEREIRA\n<br>Contato: contato@profelipereira.com.br<br>LIQUIDBOOK TECNOLOGIAS PARA PUBLICAÇÕES | CNPJ: 09.628.768/0001-89\n<br>Contato: contato@liquidbook.com.br<br></p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rx9i0ESfVN",
-          "_anchor": "content2-18",
+          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Termos de Uso e Serviço</h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>O Prof. Felipe Pereira apresenta os Termos de uso (\"Termos de Uso\") de seu site (www.profelipepereira.com.br), sua plataforma e serviços (juntos, a \"Plataforma\") estabelecidos neste documento, Plataforma essa de educação online sobre preparação para o ENEM e outros concursos. A Plataforma é de propriedade do Prof. Felipe Pereira e é operada por ele e por Rafael Martins Trombetta (\"Equipe Prof. Felipe Pereira\").\n<br>\n<br>Nossa Política de Privacidade, também aplicável aos serviços, pode ser encontrada em nossa página <a href=\"politica-de-privacidade.html\" target=\"_blank\" class=\"text-success\">Política de Privacidade</a>.\n<br>\n<br>Os Termos de Uso e a Política de Privacidade são válidos para todos os usuários de nossa Plataforma e são aplicáveis para todas as categorias de produtos/serviços ofertados pelo Prof. Felipe Pereira (como: Semana Redação ENEM, Curso Redação ENEM, Semana Linguagens ENEM, Curso Linguagens ENEM)\n<br>\n<br>O uso continuado dos nossos serviços constitui a aceitação de quaisquer alterações ou modificações feitas nos Termos de Uso. Caso você não concorde com estes Termos de Uso, você não está autorizado a acessar ou utilizar os Serviços oferecidos em nossa Plataforma. A utilização dos Serviços está expressamente condicionada ao seu consentimento às regras dos Termos de Uso.\n<br>\n<br>A última modificação nestes Termos de Uso foi feita em 31/07/2019.\n<br>\n<br><b>1. Definições\n</b><br>\n<br>Membro: Qualquer pessoa que tenha se registrado na Plataforma.\n<br>Usuário: Qualquer pessoa que acesse as Áreas Públicas da Plataforma e que não tenha se registrado como Membro.\n<br>Áreas Privadas: Áreas de nossa Plataforma restritas para Membros, de acordo com o cadastro e/ou compra de algum Serviço.\n<br>Áreas Públicas: Áreas de nossa Plataforma acessíveis para todo Usuário, que não necessitam de qualquer cadastro para acesso.\n<br>\n<br><b>2. Acesso a Plataforma</b>\n<br>\n<br>2.1. Para se tornar Membro e acessar alguns dos recursos que a Plataforma oferece, pode ser requerido que você forneça alguns detalhes para inscrição ou outras informações. Toda informação que você fornece deve ser correta, atualizada e completa. Se acreditarmos que a informação fornecida não é correta, atualizada ou completa, temos o direito de recusar o seu acesso a Plataforma ou qualquer um de seus Serviços e também de cancelar ou suspender seu acesso a qualquer momento sem notificação prévia.\n<br>\n<br>2.2. Somente pessoas acima de 18 anos podem fazer negociações na Plataforma. Caso você tenha entre 13 e 17 anos, nós entendemos que você está sendo assistido pelos seus pais e/ou responsáveis ao navegar por este site e que estes leram e concordaram com estes Termos de Uso.\n<br>\n<br>2.3. Caso seu filho tenha se cadastrado e você queira excluir seus dados e cadastro de nossos registros, você poderá fazê-lo através do e-mail contato@profelipereira.com.br.\n<br>\n<br>2.4. Ao aceitar estes Termos de Uso, você tem o direito não exclusivo, intransferível, não sub-licenciável e limitado de entrar em nossa Plataforma, acessar e usar os Serviços contratados, unicamente para uso pessoal e não comercial.\n<br>\n<br>2.5. Todos os direitos não previstos expressamente nestes Termos de Uso estão reservados ao Prof. Felipe Pereira.\n<br>\n<br>2.6. Você concorda que os Serviços são para o seu uso pessoal e não comercial e que ninguém além de você usará os Serviços. Além da licença limitada de uso estabelecida nestes Termos de Uso, você não tem qualquer outro direito, título ou propriedade sobre os Serviços. Você entende e reconhece que, em quaisquer circunstâncias, os seus direitos com relação aos Serviços serão limitados pelos direitos autorais e/ou leis de propriedade intelectual aplicáveis e ainda por estes Termos de Uso.\n<br>\n<br>2.7. Os Serviços permitem que os Membros tenham acesso a Plataforma, e conforme estrutura do Serviço contratado, [descrever ações incluídas no possiveis serviços - ex.: obter instruções por aulas gravadas, tutoria individual ou em grupo, etc]. \n<br>\n<br>2.8. A contratação de quaisquer dos Serviços não garante ao Membro qualquer tipo de aprovação em qualquer prova e/ou concurso ou obtenção de qualquer resultado específico.\n<br>\n<br>2.9. A Equipe Prof. Felipe Pereira poderá, a qualquer momento, modificar os Serviços e/ou Conteúdo ou descontinuar a sua disponibilidade, sem necessidade de aceite prévio pelo Usuário e/ou Membro.\n<br>\n<br>2.10. A utilização contínua da Plataforma após a divulgação de eventuais mudanças, inclusões, exclusões e/ou alterações, confirmará a aceitação destas pelo Usuário e/ou Membro.\n<br>\n<br><b>3. Restrições de uso\n<br></b>\n<br>3.1. Você pode utilizar esta Plataforma para propósitos expressamente permitidos por nestes Termos de Uso. Você não pode utilizá-lo em qualquer outro objetivo, incluindo propósitos comerciais, sem o nosso consentimento prévio expresso e escrito. Por exemplo, você não pode (e tampouco pode autorizar a terceiros) a (i) associar as nossas marcas a nenhuma outra, ou (ii) fazer um frame deste site em outro.\n<br>\n<br>3.2.  Para efeitos destes Termos de Uso, “associar as nossas marcas” significa expor nome, logo, marca comercial ou outros meios de atribuição ou identificação em fonte de maneira que dê ao usuário a impressão de que tal fonte tem o direito de expor, publicar ou distribuir este site ou o conteúdo disponibilizado por ele. Você concorda em cooperar conosco para cessar qualquer associação, frame ou hiperlink não autorizados.\n<br>\n<br>3.3. Sem se limitar ao disposto acima, a Equipe Prof. Felipe Pereira tem o direito de remover quaisquer informações ou outro material que viole esses Termos de Uso ou seja de outra maneira questionável, bem como suspender ou banir qualquer Usuário ou Membro que descumpra os presentes Termos de Uso.\n<br>\n<br><b>4. Regras de Pagamento, Cancelamento e Reembolso\n<br></b>\n<br>4.1. Cada um dos Serviços ofertados na Plataforma pode ter regras específicas de Pagamento, Cancelamento e Reembolso que serão esclarecidos no momento da contratação e no e-mail de confirmação que acompanha cada compra.\n<br>\n<br>4.2. Você concorda em efetuar o pagamento pelos Serviços contratados que não sejam disponibilizados de forma gratuita pela Plataforma, a fim de ter acesso aos Serviços pagos da Plataforma, conforme descritos em nosso site. Todos os pagamentos são realizados dentro da Plataforma, por meio de parceiro terceiro especificamente contratado para tanto. Não serão aceitas quaisquer outras formas de pagamento.\n<br>\n<br>4.3. Durante sua inscrição, às informações do seu cartão de crédito ou de sua conta bancária podem ser necessárias. Como Membro, você concorda que sejam cobrados no seu cartão ou debitados em sua conta os preços relativos aos Serviços contratados. Para algumas formas de pagamento, a instituição bancária indicada por você poderá cobrar taxas. A cobrança de impostos locais pode variar de acordo com a forma de pagamento escolhida. Consulte a instituição financeira da sua forma de pagamento caso deseje obter mais detalhes.\n<br>\n<br>4.4. O Prof. Felipe Pereira se reserva ao direito de a qualquer momento alterar os preços publicados no site, sem aviso prévio. A alteração não se aplicará aos contratos vigentes, podendo ser aplicada às renovações de contrato mensal ou anual, mediante concordância do Membro.\n<br>\n<br>4.5. Política de Reembolso: em conformidade com o Código de Defesa do Consumidor, em até 7 dias após a compra ou renovação de qualquer Serviço, em caso de desistência da contratação, você poderá solicitar o cancelamento. Se optar pelo cancelamento, o reembolso será realizado pela Equipe Prof. Felipe Pereira através de estorno do cartão de crédito no qual a compra foi efetuada, em até 30 (trinta) dias após a solicitação. O efetivo recebimento do reembolso dependerá das políticas da sua administradora do cartão de crédito. Para pagamentos realizados via boleto bancário, os reembolsos serão realizados mediante depósito em conta corrente do Membro dentro do prazo de 30 (trinta) dias contados da solicitação com indicação dos dados bancários completos da conta a ser efetuado o depósito. O cancelamento implica na suspensão automática do acesso do Membro a totalidade dos Serviços cancelados.<br><br>4.6. Para realizar o cancelamento, o Membro deverá enviar solicitação para contato@profelipereira.com.br (Assunto: [Cancelamento Matrícula]). O e-mail deve ser o e-mail de cadastro como Membro na Plataforma.\n<br><br>4.7. Nenhum valor pago pelos Serviços será reembolsável, exceto disposição em contrário nestes Termos de Uso.\n<br>\n<br><b>5. Propriedade da Informação\n<br></b>\n<br>5.1. O material e conteúdo acessíveis nesta Plataforma, seja no website, seja em outros trabalhos de autoria do Prof Felipe Pereira encontrados na Plataforma como parte do Serviço (\"Conteúdo\") pertence ao Prof. Felipe Pereira e o Prof. Felipe Pereira detém todo o direito, título e proveito do Conteúdo, e está protegido pelas leis e tratados de direitos autorais nacionais e internacionais, assim como outras leis e tratados de propriedade intelectual.\n<br>\n<br>5.2. O Conteúdo é licenciado e não vendido, apenas e tão somente nos limites descritos nos presentes Termos de Uso, não permitindo qualquer licença implícita. Assim, o Conteúdo não pode ser copiado, distribuído, republicado, carregado, postado ou transmitido por qualquer meio, exceto quando você imprime uma cópia para seu uso pessoal somente. Modificação ou uso do Conteúdo em qualquer outra forma que não as expressamente descritas nestes Termos de Uso viola os nossos direitos de propriedade intelectual. Nem autoria nem a propriedade intelectual são transferidas para você ao acessar esta Plataforma.\n<br>\n<br>5.3. Todos os direitos autorais do Conteúdo e dos Serviços (incluindo, mas não se limitando a imagens, fotografias, animações, vídeos, áudio, texto e layout incorporados nos Serviços) são de propriedade do Prof. Felipe Pereira\n<br>\n<br>5.4. Você concorda em cumprir com todas às leis de proteção dos direitos autorais relacionadas ao uso dos Serviços e do Conteúdo e a Equipe Prof. Felipe Pereira reserva-se ao direito de tomar, a seu exclusivo critério, as medidas que julgar apropriadas para proteger seus direitos autorais.\n<br>\n<br>5.5. Não é permitido aos Usuários e/ou Membros tentar reconfigurar, desmontar ou fazer engenharia reversa no website, nos Serviços ou outros produtos acessíveis pelos Serviços. Também não é permitido manipular o Conteúdo, usar métodos de data mining, coleta ou extração de dados.\n<br>\n<br>5.6. Você não está autorizado a utilizar nenhuma marca e/ou sinal distintivo encontrado no website, no Conteúdo e/ou nos Serviços da Plataforma, Você não pode copiar, exibir ou usar nenhuma das marcas comerciais sem consentimento prévio, expresso e por escrito do Prof. Felipe Pereira. Qualquer uso não autorizado estará violando a legislação nacional, bem como os presentes Termos de Uso.\n<br>\n<br>5.7. Você concorda, ainda, em não reproduzir, duplicar, copiar, vender, revender ou explorar com quaisquer fins comerciais, qualquer porção da Plataforma, bem como restando proibido o compartilhamento de login e senha com outras pessoas que não o próprio Membro e a exibição coletiva do Conteúdo.\n<br>\n<br><b>6. Hiperlinks\n</b><br>\n<br>6.1. Esta Plataforma pode conter links para outros websites que não são mantidos ou mesmo relacionados à nós. A Equipe Prof. Felipe Pereira não tem controle sobre tais websites ou recursos, e não revisamos todos ou mesmo nenhum desses sites e não somos responsável pelo conteúdo deles. Você entende concorda que não somos responsáveis pela disponibilidade de tais websites, não endossamos e não nos responsabilizamos por qualquer conteúdo, publicidade, produto ou qualquer outro material disponível nestes websites.\n<br>\n<br>6.2. Você entende e concorda que a Equipe Prof. Felipe Pereira não será responsável, direta ou indiretamente, por quaisquer perdas e danos causadas de terem sido causadas ou relacionadas ao uso de qualquer conteúdo, bem ou serviço disponível na Plataforma ou através do uso de qualquer um desses websites, recursos e/ou serviços.\n<br><br><b>7. Envios\n<br></b>\n<br>7.1. Por este termo você garante à nossa Empresa e o Prof. Felipe Pereira, o direito e licença royalty-free, perpétuo, irrevogável, global não exclusivo de usar, reproduzir, modificar, adaptar, publicar, traduzir, criar trabalhos derivados, distribuir, representar e expor todo o conteúdo, observações, sugestões, ideias, desenhos ou outras informações comunicadas à nós por este site (juntos, denominados agora como “Envios”), e incorporar qualquer Envio em outros trabalhos em qualquer formato, mídia ou tecnologia conhecida hoje ou ainda a ser desenvolvida. Não somos obrigados a tratar nenhum Envio como confidencial e podemos usar qualquer Envio em nosso negócio (incluindo e não se limitando a produtos ou propaganda) sem ser imputada nenhuma responsabilidade por royalties ou qualquer outra consideração de qualquer tipo e como resultado não fica responsável por qualquer similaridade que possa aparecer em nossas operações futuras. Trataremos qualquer informação pessoal que você submeter por esse site de acordo com as Políticas de Privacidade do site.\n<br>\n<br><b>8. Aviso Legal\n<br></b>\n<br>8.1. Você entende que a Equipe Prof. Felipe Pereira não pode e não garante que arquivos disponíveis para download da Internet estejam livres de vírus, worms, cavalos de Tróia ou outro código que possa manifestar propriedades contaminadoras ou destrutivas. Você é responsável por implementar procedimentos e checkpoints suficientes para satisfazer seus requisitos de segurança e por manter meios externos a este site para reconstrução de qualquer dado perdido. Não assumimos nenhuma responsabilidade ou risco pelo uso da Internet.\n<br>\n<br>8.2. O USO DESTE SITE É DE SUA TOTAL RESPONSABILIDADE. O CONTEÚDO É OFERECIDO COMO ESTÁ E SEM GARANTIAS DE QUALQUER TIPO, EXPRESSAS OU IMPLÍCITAS. NÃO GARANTiMOS QUE AS FUNÇÕES OU CONTEÚDO PRESENTE NESTE SITE SERÁ CONTÍNUO, LIVRE DE ERROS, QUE FALHAS SERÃO CORRIGIDAS OU QUE ESTE SITE E O SERVIDOR QUE O TORNA DISPONÍVEL ESTÃO LIVRES DE VÍRUS OU OUTROS COMPONENTES DESTRUTIVOS. NÃO GARANTIMOS OU FAZEMOS QUALQUER REPRESENTAÇÃO RELACIONADA AO USO OU RESULTADOS DO USO DO CONTEÚDO EM TERMOS DE PRECISÃO, CONFIABILIDADE OU OUTROS. O CONTEÚDO PODE INCLUIR IMPRECISÕES TÉCNICAS OU ERROS TIPOGRÁFICOS E PODEMOS FAZER MUDANÇAS OU MELHORIAS A QUALQUER MOMENTO. VOCÊ, E NÃO NÓS, ASSUME O CUSTO DE QUALQUER SERVIÇO, REPARO OU CORREÇÃO NECESSÁRIOS NO CASO DE QUALQUER PERDA OU DANO CONSEQUENTE DO USO DESTE SITE OU SEU CONTEÚDO. NOSSO SERVIÇO PODE NÃO ESTAR LIVRE DE INTERRUPÇÕES OU ERROS. ALÉM DISSO, NENHUM CONSELHO OU INFORMAÇÃO, SEJA ORAL OU ESCITA, OBTIDA DE VOCÊ POR NÓS, DEVE CRIAR NENHUM TIPO DE GARANTIA.\n<br>\n<br>8.3. Toda informação neste site seja de natureza histórica ou prospectiva é válida somente para a data que foi publicada no site e não nos comprometemos com nenhuma obrigação de atualizar tal informação depois que é publicada ou remover tal informação deste site caso ela não seja (mais) precisa ou completa.\n<br>\n<br><b>9. Limitação de responsabilidade\n<br></b>\n<br>9.1. O PROF. FELIPE PEREIRA, SEUS PARCEIROS, PROVEDORES DE SERVIÇO, PROVEDORES DE CONTEÚDO, EMPREGADOS, AGENTES, NÃO SERÃO RESPONSÁVEIS POR QUALQUER DANO EVENTUAL, DIRETO, INDIRETO, PUNITIVO, REAL, CONSEQUENTE, ESPECIAL, EXEMPLAR OU DE QUALQUER OUTRO TIPO, INCLUINDO PERDA DE RECEITA OU RENDA, DOR E SOFRIMENTO, ESTRESSE EMOCIONAL OU SIMILARES MESMO QUE TENHAMOS ACONSELHADO SOBRE A POSSIBILIDADE DE TAIS DANOS. DE NENHUMA FORMA A RESPONSABILIDADE COLETIVA DO PROF. FELIPE PEREIRA, SEUS PARCEIROS, PROVEDORES DE SERVIÇO, PROVEDORES DE CONTEÚDO, EMPREGADOS, AGENTES, EM RELAÇÃO A TERCEIROS (INDEPENDENTE DO TIPO DE AÇÃO, SEJA POR CONTRATO OU QUALQUER OUTRO) EXCEDERÁ A QUANTIA DE R$100 OU O VALOR PAGO À EMPRESA POR TAL CONTEÚDO, PRODUTO OU SERVIÇO DO QUAL A QUESTÃO TENHA SIDO LEVANTADA.\n<br>\n<br><b>10. Indenização\n</b><br>\n<br>10.1. Você concorda em defender, indenizar, proteger e isentar o Prof. Felipe Pereira, seus parceiros, provedores de serviço, provedores de conteúdo, empregados e agentes (\"Partes Isentas\") de qualquer violação destes Termos de Uso por você, incluindo o uso do Conteúdo diferente do expresso aqui. Você concorda que as Partes Isentas não têm responsabilidade ou conexão com qualquer violação ou uso não autorizado e você concorda em remediar toda e qualquer perda, dano, julgamento, prêmios, custo, despesas e honorários advocatícios das Partes Isentas ligadas a violação. Você também indenizará e isentará as Partes Isentas de qualquer reivindicação de terceiros resultante do uso da informação contida neste site.\n<br>\n<br><b>11. Informação provida pelo usuário\n<br></b>\n<br>11.1. Você não pode publicar enviar, apresentar ou fazer conexão a esse site qualquer material que:\n<br># você não tenha o direito de postar, incluindo material de propriedade de terceiros;\n<br># defenda atividade ilegal ou discutir a intenção de fazer algo ilegal;\n<br># seja vulgar, obsceno, pornográfico ou indecente;\n<br># não diga respeito diretamente a este site;\n<br># possa ameaçar ou insultar outros, difamar, caluniar, invadir privacidade, perseguir, ser obsceno, pornográfico, racista, assediar ou ofender;\n<br># busca explorar ou prejudicar crianças expondo-as a conteúdo inapropriado, perguntar sobre informações pessoais ou qualquer outro do tipo;\n<br># infrinja qualquer propriedade intelectual ou outro direito de pessoa ou entidade, incluindo violações de direitos autorais,marca registrada ou direitos de publicidade;\n<br>violam qualquer lei ou podem ser considerados para violar a lei;\n<br># personifique ou deturpe sua conexão com qualquer entidade ou pessoa; ou ainda manipula títulos ou identificadores para encobrir a origem do conteúdo;\n<br># promova qualquer empreendimento comercial (ex: oferecer produtos ou serviços em promoção) ou que engaje de qualquer forma em uma atividade comercial (ex: realizar sorteios ou concursos, expor banners patrocinadores e/ou solicitar bens e serviços) exceto que especificamente autorizado neste site;\n<br># solicitar fundos, divulgações ou patrocinadores;\n<br># inclua programas com vírus, worms e/ou Cavalos de Tróia ou qualquer outro código, arquivo ou programa de computador destinado a interromper, destruir ou limitar a funcionalidade de qualquer software ou hardware de computador ou telecomunicações;\n<br># interrompa o fluxo normal da conversa, faça com que a tela “role” mais rápido que os os outros usuários conseguem acompanhar ou mesmo agir de modo a afetar a habilidade de outras pessoas de se engajar em atividades em tempo real neste site;\n<br>inclua arquivos em formato MP3;\n<br># desobedeça qualquer política ou regra estabelecida de tempos em tempos para o uso desse site ou qualquer rede conectada a ele; ou,\n<br># contenha hiperlinks para sites que contenham conteúdo que se enquadrem nas descrições acima.\n<br>\n<br>11.2. Mesmo sem a obrigação de fazê-lo, a Equipe Prof. Felipe Pereira se reserva o direito de monitorar o uso desta Plataforma para determinar o cumprimento destes Termos de Uso, assim como o de remover ou vetar qualquer informação por qualquer razão. De qualquer forma você é completamente responsável pelo conteúdo de seus envios. Você sabe e concorda que nem o Prof. Felipe Pereira ou qualquer terceiro provendo conteúdo para o Prof. Felipe Pereira assumirá qualquer responsabilidade por nenhuma ação ou inação do Prof. Felipe Pereira ou ainda referido terceiro a respeito de qualquer envio.\n<br>\n<br><b>12. Segurança\n</b><br>\n<br>12.1. Quando você criar um registro em nossa Plataforma, você criará uma senha para habilitar seu acesso. Essa senha é somente para uso individual e você concorda em manter a sua confidencialidade, sendo o único responsável pela segurança de sua senha, e por qualquer dano resultante da não manutenção dessa confidencialidade, bem como de todas as atividades que ocorrerem através do uso de sua senha.\n<br>\n<br>12.2. Você concorda em nos notificar imediatamente em caso de qualquer acesso não autorizado de sua senha ou outra quebra de segurança e concorda que a Equipe Prof. Felipe Pereira não será responsabilizada por qualquer perda ou dano que ocorra a partir do não cumprimento desta cláusula.\n<br>\n<br>12.3. É proibido usar qualquer serviço ou ferramenta conectada a este site para comprometer a segurança ou mexer com os recursos do sistema e/ou contas. O uso ou distribuição de ferramentas destinadas para comprometer a segurança (ex: programas para descobrir senha, ferramentas de crack ou de sondagem da rede) são estritamente proibidos. Se você estiver envolvido em qualquer violação da segurança do sistema, a Equipe ou o Prof. Felipe Pereira se reservam o direito de fornecer suas informações para os administradores de sistema de outros sites para ajudá-los a resolver incidentes de segurança.\n<br>\n<br><b>13. Condições Técnicas Mínimas\n</b><br>\n<br>13.1. A qualidade das transmissões streaming e da imagem do conteúdo da Plataforma pode variar de máquina para máquina e pode ser afetada por fatores diversos, como a largura de banda disponível, a velocidade de sua conexão com a internet, ou a sua localização. \n<br>\n<br>13.2. O Membro entende que os cursos e Serviços requerem condições técnicas mínimas nas máquinas onde se pretende assistir às videoaulas. É de sua inteira responsabilidade providenciar equipamentos/máquinas que atendam tais condições, e a Equipe Felipe Pereira não será responsável por qualquer dificuldade técnica ou queda de qualidade da imagem relacionada ao não atendimento a tais condições:\n<br>\n<br><b>Requisitos Mínimos:\n</b><br>Navegador: Chrome 45 ou superior; Safari 7 ou superior; Firefox 40 ou superior; Internet Explorer 10 ou superior; Edge 13 ou superior; iOS 7 ou superior; Android 4.1 ou superior.\n<br>Conexão: 1Mbps de download (para o aluno) e 1Mbps de upload para envio de novos conteúdos (para o professor)\n<br>Resolução Mínima: 1024x768\n<br>Alguns tipos de conteúdo requerem Macromedia Flash (versão pode variar de acordo com os conteúdos)\n<br>\n<br><b>Recomendado:&nbsp;<br></b>Navegador: Chrome: última versão; Firefox: última versão; Safari 8.1 ou superior; Internet Explorer 11 ou superior.\n<br>Conexão:  10Mbps de download (para o aluno) e 3Mbps de upload para envio de novos conteúdos (para o professor)\n<br>Resolução Recomendada: 1920x1080\n<br><br>    Obs.: Requisitos mínimos sujeitos à alteração conforme necessário no futuro.\n<br><br><b>14. Contato\n<br></b>\n<br>PROF. FELIPE PEREIRA | CPF: 022.183.250/55\n<br>Contato: contato@profelipereira.com.br&nbsp;<br></p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "content2-1d",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise-amp",
+          "_cid": "rxOpgYZcPe",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -968,9 +1454,11 @@
             }
           },
           "_name": "content2",
-          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Política de Privacidade&nbsp;</h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article><br>\n<br><b>Quem somos e o que é esta Política de Privacidade?\n</b><br>O PROF. FELIPE PEREIRA é um website dedicado à produção de conteúdo online sobre preparação para o ENEM e outros concursos. O site é de propriedade e operado pelo Prof. Felipe Pereira e pela empresa Liquidbook Tecnologias para Publicações Ltda. Esta Política de Privacidade descreve as formas como coletamos, armazenamos, usamos e protegemos suas informações pessoais. Você aceita essa política e concorda com tal coleta, armazenamento e uso ao se inscrever ou usar nossos produtos, serviços ou qualquer outro recurso, tecnologia ou funcionalidade que nós oferecemos ao acessar nosso site ou por qualquer outro meio (coletivamente “os Serviços do Prof. Felipe Pereira\"). Podemos alterar a esta política a qualquer momento, divulgando uma versão revisada em nosso site. A versão revisada entrará em vigor assim que disponibilizada no site. Além disso, se a versão revisada incluir uma alteração substancial, avisaremos você com 30 dias de antecedência, divulgando o aviso sobre a alteração em nosso próprio site. Depois desse aviso de 30 dias, será considerado que você concorda com todas as emendas feitas a essa política.\n<br>\n<br><b>Importante: Política de Descadastramento (“Opt-out”) \n</b><br>O usuário dos nossos serviços que recebe comunicações nossas via e-mail pode a qualquer momento deixar de receber tais comunicações. Para tanto basta enviar um email para contato@profelipereira.com.br indicando o seu desejo de não mais receber comunicações ou simplesmente clicar no link de sair da lista (ou descadastro) encontrado no final de cada e-mail.\n<br>\n<br><b>Como coletamos informações a seu respeito?\n</b><br>Quando você visita o site profelipereira.com.br ou usa os Serviços do Prof. Felipe Pereira, nós coletamos o seu endereço IP e as informações padrão de acesso à Web como o tipo do seu navegador e as páginas que você acessou em nosso site. Quando você se inscreve para receber atualizações do nosso site, para fazer o download de algum dos nossos conteúdos, para participar de eventos online que promovemos, para comprar um dos nossos produtos, ou qualquer outra atividade em que solicitemos um cadastro seu, poderemos coletar os seguintes tipos de informações:\n<br>·        Informações de contato: o seu nome, endereço, telefone, e-mail, nome de usuário do Skype e outras informações semelhantes;\n<br>·        Informações financeiras: os números da conta bancária e do cartão de crédito que você forneceu quando adquiriu um produto ou serviço pago ao Serviços do Prof. Felipe Pereira.\n<br>Antes de permitir o uso dos Serviços do Prof. Felipe Pereira, poderemos exigir que você forneça informações adicionais que poderemos usar para verificar sua identidade ou endereço ou gerenciar risco, como sua data de nascimento, número de registro nacional, nacionalidade e outras informações de identificação. Também podemos obter informações suas através de terceiros, como centros de crédito e serviços de verificação de identidade. Quando estiver usando os Serviços do Prof. Felipe Pereira, coletaremos informações sobre suas transações e outras atividades suas em nosso site ou quando usar os Serviços do Prof. Felipe Pereira e podemos coletar informações sobre seu computador ou outro dispositivo de acesso com finalidade de prevenção contra fraude. Por fim, podemos coletar informações adicionais de e sobre você por outros meios, como de contatos com nossa equipe de suporte ao cliente, de resultados de suas respostas a uma pesquisa, de interações com membros da família corporativa do Prof. Felipe Pereira e de outras empresas.\n<br>\n<br><b>Como usamos cookies?\n</b><br>Quando você acessa o nosso site, nós, incluindo as empresas que contratamos para acompanhar como nosso site é usado, podemos colocar pequenos arquivos de dados chamados “cookies” no seu computador. Enviamos um “cookie da sessão” para o seu computador quando você acessa nosso site, entra em sua conta ou usa os Serviços do Prof. Felipe Pereira. Esse tipo de cookie nos ajuda a reconhecê-lo caso você visite várias páginas em nosso site durante a mesma sessão, para que não precisemos solicitar suas informações e/ou senha em todas as páginas. Depois que você sair ou fechar o seu navegador, esse cookie irá expirar e deixará de ter efeito. Também usamos cookies de maior duração para outras finalidades, como, por exemplo, para exibir o seu endereço de e-mail em um formulário de cadastro ou acesso, para que você não precise digitar novamente o endereço de e-mail sempre que quiser fazer um cadastro ou acesso em algum dos nossos serviços ou produtos. Codificamos nossos cookies para que apenas nós possamos interpretar as informações armazenadas neles. Você está livre para recusar nossos cookies caso o seu navegador permita, mas isso pode interferir no uso do nosso site. Nós e nossos prestadores de serviço também usam cookies para personalizar nossos serviços, conteúdo e publicidade, avaliar a eficiência das promoções e promover confiança e segurança. Você pode encontrar cookies de terceiros ao usar os Serviços do Prof. Felipe Pereira em determinados sites que não estão sob nosso controle (por exemplo, se você visualizar uma página da web criada por terceiros ou usar um aplicativo desenvolvido por terceiros, um cookie poderá ser colocado por essa página ou aplicativo).\n<br>\n<br><b>Remarketing do Google\n</b><br>Nós utilizamos o recurso de Remarketing do Google Adwords para veicular anúncios em sites de parceiros do Google. Este recurso permite identificar que você visitou o nosso site e assim o Google pode exibir o nosso anúncio para você em diferentes websites. Diversos fornecedores de terceiros, inclusive o Google, compram espaços de publicidade em sites da Internet. Nós eventualmente contratamos o Google para exibir nossos anúncios nesses espaços. Para identificar a sua visita no nosso site, tanto outros fornecedores de terceiros, quanto o Google, utilizam-se de cookies, de forma similar ao exposto na seção “Como usamos cookies?”. Você pode desativar o uso de cookies pelo Google acessando o Gerenciador de preferências de anúncio.\n<br>\n<br><b>Remarketing do Facebook\n</b><br>Nós utilizamos o recurso de Remarketing do Facebook para veicular anúncios dentro do Facebook. Este recurso permite identificar que você visitou o nosso site e assim o Facebook pode exibir os nossos anúncios para você dentro do próprio Facebook. Para identificar a sua visita no nosso site utilizamos os cookies, de forma similar ao exposto na seção “Como usamos cookies?”. Caso você venha a visualizar um dos nosso anúncios no Facebook e não queira mais visualizá-lo, no próprio anúncio existem opções para ocultar e não visualizar futuramente os nossos anúncios.\n<br>\n<br><b>Como protegemos e armazenamos informações pessoais\n</b><br>Ao longo desta política, usamos o termo “informações pessoais” para descrever informações que possam ser associadas a uma determinada pessoa e possam ser usadas para identificar essa pessoa. Nós não consideraremos como informações pessoais as informações que devem permanecer anônimas, para que elas não identifiquem um determinado usuário. Armazenamos e processamos suas informações pessoais em nossos computadores e as protegemos sob medidas de proteção físicas, eletrônicas e processuais. Usamos proteções de computador, como firewalls e criptografia de dados, aplicamos controles de acesso físico a nossos prédios e arquivos e autorizamos o acesso a informações pessoais apenas para os funcionários que precisem delas para cumprir suas responsabilidades profissionais.\n<br>\n<br><b>Como usamos as informações pessoais que coletamos\n</b><br>Nossa finalidade principal ao coletar informações pessoais é fornecer a você uma experiência segura, tranquila, eficiente e personalizada. Para isso, usamos suas informações pessoais para:\n<br>·        Fornecer os serviços e o suporte ao cliente solicitados;\n<br>·        Processar transações e enviar avisos sobre as suas transações\n<br>·        Solucionar disputas, cobrar taxas e solucionar problemas;\n<br>·        Impedir atividades potencialmente proibidas ou ilegais;\n<br>·        Personalizar, avaliar e melhorar nossos serviços, além do conteúdo e do layout do nosso site;\n<br>·        Enviar materiais de marketing direcionados, avisos de atualização no serviço e ofertas promocionais com base nas suas preferências de comunicação;\n<br>·        Comparar informações, para uma maior precisão, e verificá-las com terceiros.\n<br>·        Marketing\n<br>Não vendemos nem alugamos suas informações pessoais para terceiros para fins de marketing sem seu consentimento explícito. Podemos combinar suas informações com as informações que coletamos de outras empresas e usá-las para melhorar e personalizar nossos serviços, conteúdo e publicidade. Se não desejar receber nossas mensagens de marketing nem participar de nossos programas de personalização de anúncios, basta indicar sua preferência mandando-nos um e-mail para contato@missaoenem.com.br ou simplesmente clicando no link de descadastramento fornecido no final de todos os nossos emails.\n<br>\n<br><b>Como compartilhamos informações pessoais com outras partes\n</b><br>Podemos compartilhar suas informações pessoais com:\n<br>·        Membros da família corporativa do Prof. Felipe Pereira para fornecer conteúdo, produtos e serviços conjuntos (como registro, transações e suporte ao cliente) e para ajudar a detectar e impedir atos potencialmente ilegais e violações de nossas políticas, além de cooperar nas decisões quanto a seus produtos, serviços e comunicações. Os membros da nossa família corporativa usarão essas informações para lhe enviar comunicações de marketing apenas se você tiver solicitado seus serviços.\n<br>·        Fornecedores do serviços sob contrato que colaboram em partes de nossas operações comerciais (prevenção contra fraude, atividades de cobrança, marketing, serviços de tecnologia). Nossos contratos determinam que esses fornecedores de serviço só usem suas informações em relação aos serviços que realizam para nós, e não em benefício próprio.\n<br>·        Empresas com as quais pretendemos nos fundir ou adquirir. (Se ocorrer uma fusão, exigiremos que a nova entidade constituída siga essa política de privacidade com relação às suas informações pessoais. Se suas informações pessoais puderem ser usadas contra essa política, você receberá um aviso prévio).\n<br>·        Autoridades policiais, oficiais do governo ou outros terceiros quando: formos obrigados a isso por intimação, decisão judicial ou procedimento legal semelhante; precisarmos fazer isso para estar em conformidade com a lei ou com as regras de associação de cartão de crédito; estivermos cooperando com uma investigação policial em andamento, acreditamos, de boa fé, que a divulgação das informações pessoais é necessária para impedir danos físicos ou perdas financeiras ou reportar atividade ilegal suspeita\n<br>·        Outros terceiros com seu consentimento ou orientação para tanto. Note que esses terceiros podem estar em outros países nos quais a legislação sobre o processamento de informações pessoais seja menos rígida do que a do seu país. Nos casos em que nossa empresa e um parceiro promovem juntos nossos Serviços, nós podemos divulgar ao parceiro algumas informações pessoais tais como nome, endereço e nome de usuário das pessoas que se inscreveram nos nossos Serviços com resultado da promoção conjunta com o único propósito de permitir a nós e ao parceiro avaliar os resultados da promoção. Nesse caso, informações pessoais não podem ser usadas pelo parceiro para nenhum outro propósito. O Prof. Felipe Pereira e a Liquidbook não venderão ou alugarão nenhuma das suas informações pessoais para terceiros no curso normal dos negócios e só compartilha suas informações pessoais com terceiros, conforme descrito nesta política. Se você se inscrever no Prof. Felipe Pereira diretamente em um site de terceiros ou por meio de um aplicativo de terceiros, qualquer informação inserida naquele site ou aplicativo (e não diretamente em um site do Prof. Felipe Pereira) será compartilhada com o proprietário desse site ou aplicativo, e suas informações podem estar sujeitas as políticas de privacidade deles.\n<br>\n<br></p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rx9k7fg6AX",
-          "_anchor": "content2-1a",
+          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Política de privacidade&nbsp;</h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline=\"\" mbr-article=\"\">Nós do Prof. Felipe Pereira entendemos que você valoriza sua privacidade, e deste modo queremos tornar sua experiência online segura e satisfatória. Para demonstrar nosso comprometimento vamos disponibilizar nossa política de privacidade nas páginas iniciais do site, e em todos os procedimentos de cadastro.\n<br><br><b>Como Utilizamos os Dados\n<br></b>Utilizamos os dados, tanto genéricos como pessoais, para melhorar cada vez mais a experiência de aprendizado de alunos e professores no Prof. Felipe Pereira. Não compartilhamos suas informações pessoais com anunciantes ou parceiros. Os dados que compartilhamos é de única e exclusiva necessidade de operação do site Prof. Felipe Pereira.\n<br><br><b>Coleta de Informações\n<br></b>Coletamos informações através de interações voluntárias do usuário com o site. Ao se registrar no Prof. Felipe Pereira você fornece seu nome e email. Registrando no Prof. Felipe Pereira, você declara que concorda com nossa política de privacidade.\n<br><br><b>Cookies\n<br></b>Cookie é uma pequena quantidade de dados, que pode ser enviada para seu navegador a partir de um web site e armazenado em seu computador. Quando o usuário optar por permanecer logado ao site após fechar o navegador, o Prof. Felipe Pereira utilizará um cookie para este procedimento. As informações são tratadas com sigilo, e nenhuma informação será utilizada por terceiros, nem parceiros.\n<br><br><b>Segurança\n<br></b>Tomamos uma série de medidas para proteger suas informações pessoais apresentadas no site Prof. Felipe Pereira. Lembramos que nenhum procedimento pela internet é 100% seguro, entretanto tomamos todas as medidas possíveis para minimizar ao máximo qualquer exposição de suas informações na internet, e informamos que trabalhamos dia-a-dia para melhorar nossos sistemas.\n<br><br><b>Compartilhamento de Informações\n<br></b>Ao utilizar este sistema ou fornecer informações pessoais para nós, você concorda que podemos nos comunicar com você por via eletrônica para os seguintes fins: questões de privacidade, assuntos administrativos, assuntos relacionados ao uso do site. Em todo o processo de comunicação, é considerada a política de privacidade do site Prof. Felipe Pereira.\n<br><br><b>Pagamento\n<br></b>No caso de cursos comercializados no site Prof. Felipe Pereira, o processo de pagamento é feito pela empresa de pagamentos Moip (http://www.moip.com.br), que conta com todo o aparato para oferecer a melhor segurança para o usuário. Para adquirir um curso no site Prof. Felipe Pereira, você deverá informar as seguintes informações: CPF (Cadastro de Pessoa Física), Endereço, CEP, Cidade e Estado. Estas informações são utilizadas para a transação bancária pelo sistema de pagamentos Moip.\n<br><br><b>Questões\n<br></b>Qualquer questionamento sobre nossa política de privacidade deve ser endereçada para contato@profelipereira.com.br\n<br><br><b>Links\n<br></b>O site Prof. Felipe Pereira deve ter links para outros sites, o Prof. Felipe Pereira não controla as políticas de privacidade destes outros sites. Recomendamos que você analise a política de privacidade destes sites antes de fazer seu cadastro.\n<br><br><b>Alterações\n<br></b>A Prof. Felipe Pereira pode ocasionalmente atualizar esta política. Vamos notificá-lo sobre mudanças significativas na forma como tratamos informações pessoais, enviando um aviso para o email especificado em inscrição na Prof. Felipe Pereira.<br></p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "content2-1e",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise-amp",
+          "_cid": "rxOpoTHSAO",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

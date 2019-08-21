@@ -37,7 +37,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.10.7",
     "siteFonts": [],
-    "uniqCompNum": 33,
+    "uniqCompNum": 47,
     "versionPublish": "4.10.7",
     "screenshot": "screenshot.png",
     "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
@@ -1266,6 +1266,44 @@
           "_params": {}
         },
         {
+          "_params": {
+            "token": "10127135507.727bfe1.5834beb997dc4d05b53578bbb96d32b2",
+            "showTitle": true,
+            "layoutGridRadio": true,
+            "imagesPerRowGrid": "3",
+            "rows": "2",
+            "showMoreButton": false,
+            "layoutSliderRadio": false,
+            "imagesPerRowSlider": 4,
+            "spacing": "11",
+            "fullWidth": false,
+            "paddingTop": "2",
+            "paddingBottom": "2",
+            "bgColorRadio": true,
+            "bgColor": "#fafafa",
+            "bgImageRadio": false,
+            "bgImage": "@ADDONS_PATH@/instagram-feed/instagram-feed-block/assets/instagram-background.jpg",
+            "overlay": false,
+            "overlayColor": "#efefef",
+            "overlayOpacity": 0.6
+          },
+          "title": "Instagram",
+          "buttons": "<a data-app-btn=\"true\" class=\"btn btn-md btn-info display-5\" href=\"#\" data-max-id=\"2103326974039523708_10127135507\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove,-mbrLink\">INSTAGRAM</a>",
+          "display2": "display-2",
+          "display4": "display-5",
+          "alias": "instagram-feed",
+          "_tags": [
+            "Extesões"
+          ],
+          "_name": "instagram-feed-block",
+          "_anchor": "instagram-feed-block-1a",
+          "_styles": {
+            ".inst__title": {
+              "color": "#6a6a6a"
+            }
+          }
+        },
+        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
@@ -1325,7 +1363,7 @@
       "settings": {
         "meta_descr": "Termos de Uso do site Prof. Felipe Pereira",
         "title": "Termos de Uso",
-        "order": 2
+        "order": 3
       },
       "components": [
         {
@@ -1809,7 +1847,7 @@
       "settings": {
         "meta_descr": "Política de Privacidade do site Prof. Felipe Pereira",
         "title": "Política de Privacidade",
-        "order": 1
+        "order": 2
       },
       "components": [
         {
